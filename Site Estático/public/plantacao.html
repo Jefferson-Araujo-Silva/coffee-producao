@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/plantacao.css">
+    <link rel="stylesheet" href="js/funcoes.js">
+    <link rel="icon" type="imagem/png" href="src/img/icon.png" />
+    <title>Cadastro | Plantação</title>
+</head>
+<body>
+    <!-- HEADER-->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="src/img/logo2.png" alt="" height="100px">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html #about">SOBRE NÓS</a></li>
+                    <li><a href="index.html #time">EQUIPE</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+                <button class="bnt"><a href="login.html">LOGIN</a></button>
+            </div>
+    </header>   
+
+
+    <!-- BANNER -->
+    <main>
+        <div class="container">
+            <div class="formulario">
+                <h1>Cadastro Plantação</h1>
+                <div class="form">
+                    <div class="campo">
+                        <h4>Espécie</h4>
+                        <input type="text" id="in_especie" placeholder="Espécie da plantação">
+                    </div>
+                    <div class="campo">
+                        <h4>Estado</h4>
+                        <select name="" id="sel_estado">
+                            <option value="">--ESTADO--</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <h4>Cidade</h4>
+                        <input type="text" id="in_cidade" placeholder="Cidade">
+                    </div>
+                    <div class="campo">
+                        <h4>Tamanho (m²)</h4>
+                        <input type="text" id="in_tamanho" placeholder="Tamanho da Plantação">
+                    </div>
+                    <div class="campo">
+                        <button class="bnt" onclick="plantar()">Cadastrar</button>
+                    </div>
+                </div>
+                <div class="imageCAD">
+                    <img src="./components/images/Plantacao.png" width="400px" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer">
+            <div class="logo">
+               <img src="src/img/logo2.png" alt="">
+            </div>
+            <div class="container">
+                <div class="info">
+                    <div class="nos">
+                        <h3>Sobre nós</h3>
+                        <p><a href="quemSomos.html">Quem Somos</a></p>
+                        <p><a href="valores.html">Nossos Valores</a></p>
+                        <p><a href="produto.html">Projeto</a></p>
+                    </div>
+                    <div class="equi">
+                        <h3>Equipe</h3>
+                        <p><a href="index.html #time">Nossos Membros</a></p>
+                        <p><a href="index.html #time">Suas Funções</a></p>
+                    </div>
+                    <div class="informa">
+                        <h3>Contato</h3>
+                        <img src="src/img/facebook.png" alt="">
+                        <img src="src/img/instagram.png" alt="">
+                        <img src="src/img/linkedin.png" alt="">
+                        <img src="src/img/o-email.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="p">
+                <p>Desenvolvido por alunos SPtechers - &copy; Copyright</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function plantar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var especieVar = in_especie.value;
+        var estadoVar = sel_estado.value;
+        var cidadeVar = in_cidade.value;
+        var tamanhoVar = in_tamanho.value;
+        var fkClienteVar = Number(sessionStorage.getItem('ID_CLIENTE'))
+
+        if (especieVar == "" || estadoVar == "" || cidadeVar == "" || tamanhoVar == "") {
+            alert('Por favor, preencha todos os campos para prosseguir!')
+
+           // finalizarAguardar();
+            return false;
+        } else {
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/plantar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                especieServer: especieVar,
+                estadoServer: estadoVar,
+                cidadeServer: cidadeVar,
+                tamanhoServer: tamanhoVar,
+                fkClienteServer: fkClienteVar
+            })
+        }).then(function (resposta) {
+
+           console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+               alert("Cadastro realizado com sucesso!")
+
+                setTimeout(() => {
+                    window.location = "dashboards/dashboard.html";
+                }, "2000")
+
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+           console.log(`#ERRO: ${resposta}`);
+        //    finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+</script>

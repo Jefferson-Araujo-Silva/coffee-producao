@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+* {
+    font-family: Play;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.356);
+    max-width: 195vh;
+    max-height: 45vh;
+
+}
+
+.janela {
+    display: flex;
+    margin-left: 4%;
+    max-width: 10vh;
+
+}
+
+.header-left a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 3px solid rgb(207, 119, 38);
+    background-color: #212124;
+}
+
+.header-left h1 {
+    color: #68543e;
+}
+
+.hello {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.userimg {
+
+    width: 92px;
+    height: 92px;
+    left: 103px;
+    top: 135px;
+
+}
+
+.hello h3 {
+    color: #e3b062;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+.hello h3 span {
+    font-weight: 800;
+}
+
+.btn-nav {
+    width: 40%;
+    color: white;
+    background-color: #000000;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2% 5%;
+}
+
+.btn-nav-white {
+    text-align: center;
+    width: 50%;
+}
+
+.header-left .img {
+
+    margin-left: -100%;
+    margin-bottom: -25%;
+}
+
+.btn-nav-white h3 {
+    color: rgb(207, 119, 38);
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-logout {
+    margin-top: 100px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+
+.graficos {
+    display: flex;
+    width: 100%;
+    /* box-shadow: 0px 4px 4px rgba(207, 119, 38, 0.5); */
+}
+
+.graficos .container {
+    margin-left: 23%;
+    width: 100%;
+    position: relative;
+}
+
+.graf_linha {
+    position: relative; 
+    background-color: rgba(16, 16, 16, 1);
+    padding: 10% 25%;
+    width: 480px;
+    margin-left: 1%;
+    height: 35%;
+    margin-top: 0%;
+}
+
+.graf_barra {
+    position: relative;
+    background-color: rgba(16, 16, 16, 1);
+    padding: 15px  0px;
+    height: 32vh;
+    width: 55vh ;
+    padding: 7% 1%;
+    height: 30%;
+    margin-top: 5.5%;
+    width: 75% ;
+}
+ .graf_hbarra{
+    position: relative;
+    background-color: rgba(16, 16, 16, 1);
+    padding: 42px 20px ;
+    height: 19.2vh;
+    width: 60vh;
+    padding: 4.1% 2% ;
+    margin-top: 24%;
+    margin-left: -6%;
+} 
+
+.indicadores{
+    height: 10%;
+    width: 20%;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    margin-left: 77%;
+}
+.div_represent{
+    background-color: black;
+    color: #735233;
+    font-size: 15px;
+    height: 80px;
+    padding-top: 1px;
+    padding-bottom: 10px;
+}
+
+.div_nsensores{
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    margin-top: 45px;
+}
+.sensor{
+    border-bottom: 3px solid #cf7726;
+    font-size: 13px;
+}
+.number{
+    font-size: 18px;
+}
+
+.caixaP {
+    position: relative;
+    margin-left: 2%;
+    padding: 13px 57px;
+    background-color: #000000;
+    height: 28.8vh;
+    padding: 1.7% 5%;
+    margin-top: 24%;
+}
+
+.textoGrafico{
+    color:white;
+    font-size: 70%;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: -5%;
+}
+.porcentagem{
+    color: white;
+    margin-left: 2% ;
+    background-color:#cf7726;
+    margin-top: 20px;
+    padding: 21px 38px;
+    border-radius: 80%;
+    text-align: center;
+    width: 55%;
+}
+
+.porcentagem h1{
+    font-size: 45px;
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o chartJS</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="icon" type="imagem/png" href="../src/img/icon.png" />
+    <script src="../js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Healt Tech</title>
+</head>
+<body>
+
+  <!-- menu de navegação -->
+  <div class="janela">
+    <div class="header-left">
+      <h1>Grand Coffee</h1>
+
+      <img src="../src/img/user.png" class="userimg">
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+      </div>
+
+      <div class="btn-nav-white">
+        <img src="../src/img/home.png" class="img">
+        <a href="../perfil.html">
+          <h3>Perfil</h3>
+          </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <img src="../src/img/setor.png" class="img">
+        <a href="">
+          <h3>Setores da Plantação</h3>
+          </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <img src="../src/img/graf.png" class="img">
+        <a href="./graph.html">
+            <h3>Gráficos</h3>
+        </a>
+      </div>
+
+      <div class="btn-nav-white">
+        <!-- <img src="../components/images/cadastro.png" class="img"> -->
+        <a href="../plantacao.html">
+            <h3>Cadastro da Plantação</h3>
+        </a>
+      </div>
+
+      <div class="btn-logout" onclick="limparSessao()">
+        <img src="../src/img/logout.png" alt="">
+          
+      </div>
+
+    </div>
+  </div>
+
+<!-- KPI -->
+<div class="janela">
+  <div class="cards">
+
+    <div class="card1">
+      <h2>ALERTA</h2>
+      <p>Temperatura menor que 3°C <br> Umidade menor que 5%</p>
+    </div>
+
+    <div class="card2">
+      <h2>RISCO</h2>
+      <p>Temperatura menor que 18°C <br> Umidade menor que 10%</p>
+    </div>
+
+    <div class="card3">
+      <h2>IDEAL</h2>
+      <p>Temperatura entre 18°C e 22°C <br> Umidade entre 11% e 13%</p>
+    </div>
+
+    <div class="card4">
+      <h2>RISCO</h2>
+      <p>Temperatura maior que 22°C <br> Umidade maior que 13%</p>
+    </div>
+
+    <div class="card5">
+      <h2>ALERTA</h2>
+      <p>Temperatura maior que 30°C <br> Umidade maior que 18%</p>
+    </div>
+</div>
+
+<!-- cards de temperatura -->
+<div class="cards-setor">
+  <div class="container">
+    <div class="cards1 card" id="card" style="background-color: #212124;">
+      <h1>Setor 1</h1>
+      <div class="temperatura">
+        <p class="p" id="temp_setor1">Temp: <span id="b_temp0">20°C</span> <br> Umi: <span id="b_umi0">12%</span></p>
+        <br>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+    
+    <div class="cards2 card" id="card" style="background-color: #212124;">
+      <h1>Setor 2</h1>
+      <div class="temperatura">
+        <p class="p" id="temp_setor2">Temp: <span id="b_temp1">20°C</span> <br> Umi: <span id="b_umi1">12%</span></p>
+        <br>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+
+    <div class="cards3 card" id="card" style="background-color: #212124;">
+      <h1>Setor 3</h1>
+      <div class="temperatura">
+        <p class="p" id="temp_setor3">Temp: <span id="b_temp2">20°C</span> <br> Umi: <span id="b_umi2">12%</span></p>
+        <br>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+
+    <div class="cards4 card" id="card" style="background-color: #212124;">
+      <h1>Setor 4</h1>
+      <div class="temperatura">
+        <p class="p" id="temp_setor4">Temp: <span id="b_temp3">20°C</span> <br> Umi: <span id="b_umi3">12%</span></p>
+        <br>
+        <h5>5 minutos atrás</h5>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+    
+ </html>
+<script>
+
+
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+  window.onload = obterDadosCard();
+
+
+  function obterDadosCard(idDados) {
+
+
+  fetch(`/medidas/ultimasCards/${idDados}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+          response.json().then(function (resposta) {
+              console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+              resposta.reverse();
+
+              plotarGrafico(resposta, idDados);
+          });
+      } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+      }
+  })
+      .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+  // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+  // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+
+  var dados = []
+  var dados1 = []
+  var dados2 = []
+  var dados3 = []
+
+  function plotarGrafico(resposta, idDados) {
+
+    console.log('iniciando plotagem do gráfico...');
+
+
+    console.log('----------------------------------------------')
+    console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+    console.log(resposta)
+
+  // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < 4; i++) {
+    var registro = resposta[i];
+    document.getElementById(`b_umi${i}`).innerHTML = `${registro.umidade}%`
+    document.getElementById(`b_temp${i}`).innerHTML = `${registro.temperatura}ºC`
+    dados.push(registro)
+  }
+
+    // console.log('----------------------------------------------')
+    // console.log('O gráfico será plotado com os respectivos valores:')
+    // console.log('Labels:')
+    // console.log(labels1)
+    // console.log('Dados:')
+    // console.log(dados.datasets)
+    // console.log('----------------------------------------------')
+
+    // função para os alertas
+    //trocado a cor dos cards para alertar o usuario
+    var card = document.querySelectorAll(".card")
+    var p = document.querySelectorAll(".p")
+
+  for (var i = 0; i < card.length; i++){
+    if(registro.umidade < 3 && registro.temperatura < 5){
+      card[i].style.background = '#3ec8e1';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    }else if(registro.umidade < 18 && registro.temperatura < 10){
+      card[i].style.background = '#d9e146';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    }else if(registro.umidade > 22 && registro.temperatura > 13){
+      card[i].style.background = '#e18e46';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    } else if(registro.umidade > 30 && registro.temperatura > 18){
+      card[i].style.background = '#E13E3E';
+      card[i].style.color = 'black';
+      p[i].style.color = 'black';
+    }
+  }
+
+  if(registro.umidade < 3 && registro.temperatura < 5){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+    }else if(registro.umidade < 18 && registro.temperatura < 10){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
+    }else if(registro.umidade > 22 && registro.temperatura > 13){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! VERIFIQUE A SUA PLANTAÇÃO')
+    } else if(registro.umidade > 30 && registro.temperatura > 18){
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('ALERTA !!!!! RISCO DE PERCA DE PLANTAÇÃO')
+    }else{
+      console.log('Estou comparando os dados atuais aos antigos, Ja ouve uma mudança')
+      alert('PLANTAÇÃO NORMAL')
+    }
+
+
+    setTimeout(() => atualizarCards(idDados, resposta), 5000);
+
+  }
+
+
+  // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+  // buscando a última medida inserida em tabela contendo as capturas, 
+
+  //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+  //     Para ajustar o "select", ajuste o comando sql em src/models
+  function atualizarCards(idDados, resposta) {
+
+
+
+  fetch(`/medidas/tempo-realCards/${idDados}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+          response.json().then(function (novoRegistro) {
+
+              console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+              console.log(`Dados atuais do gráfico:`);
+              console.log(resposta);
+
+              if (novoRegistro[0].momento_grafico == dados.length[0] && novoRegistro[1].momento_grafico == dados.length[1] && novoRegistro[2].momento_grafico == dados.length[2] && novoRegistro[3].momento_grafico == dados.length[3]) {
+                  console.log("---------------------------------------------------------------")
+                  console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                  console.log("Horário do novo dado capturado:")
+                  console.log(novoRegistro.momento_grafico)
+                  console.log("Horário do último dado capturado:")
+                  console.log(dados.length)
+                  console.log("---------------------------------------------------------------")
+              } else {
+                  // tirando e colocando valores no gráfico
+
+                  for (i = 0; i < 4; i++) {
+                   var registro = novoRegistro[i];
+                   document.getElementById(`b_umi${i}`).innerHTML = `${registro.umidade}%`
+                   document.getElementById(`b_temp${i}`).innerHTML = `${registro.temperatura}ºC`
+                   dados.push(registro)
+                  }
+
+              
+              }
+
+              // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+              proximaAtualizacao = setTimeout(() => atualizarCards(idDados, dados), 5000);
+          });
+      } else {
+          console.error('Nenhum dado encontrado ou erro na API');
+          // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+          proximaAtualizacao = setTimeout(() => atualizarCards(idDados, dados), 5000);
+      }
+  })
+      .catch(function (error) {
+          console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+
+      
+
+  }
+
+
+ </script>

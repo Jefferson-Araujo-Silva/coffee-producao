@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/simulador.css">
+    <link rel="icon" type="imagem/png" href="src/img/icon.png" />
+    <title>Healt Tech</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="src/img/logo2.png" alt="" height="100px">
+            </div>
+            <div class="nav">
+                <ul>
+                   <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html #about">SOBRE NÓS</a></li>
+                    <li><a href="index.html #time">EQUIPE</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+                <button class="bnt"><a href="cadastro.html">CADASTRAR</a></button>
+            </div> 
+    </header>
+<main>
+    <div class="simulador" id="formu">
+        <div class="formulario">
+            <h1>Simulador Financeiro</h1>
+                <div class="form">
+                    <div class="campo">
+                        <h4>Qual o tipo de café ?</h4><br>
+                        <select name="" id="sel_cafe">
+                            <option value=""> Escolha o tipo de café </option>
+                            <option value="Arabica">Arábica</option>
+                            <option value="Robusta">Robusta</option>
+                            <option value="Liberica">Libérica</option>
+                        </select><br>
+                       <br> <h4>Informe o tamanho da estufa (m2)</h4>
+                        <input id="in_tamanho"><br>
+                    </div>
+                    <button onclick="calcular()" class="bnt">Calcular</button>
+                </div>                
+        </div>
+    <div class="image">
+        <img src="src/img/simulador2.png" alt="">
+    </div>
+</div>
+</main>
+
+<footer id="contact">
+    <div class="footer">
+        <div class="logo">
+           <img src="src/img/logo2.png" alt="">
+        </div>
+        <div class="container">
+            <div class="info">
+                <div class="nos">
+                    <h3>Sobre nós</h3>
+                    <p><a href="quemSomos.html">Quem Somos</a></p>
+                    <p><a href="valores.html">Nossos Valores</a></p>
+                    <p><a href="produto.html">Projeto</a></p>
+                </div>
+                <div class="equi">
+                    <h3>Equipe</h3>
+                    <p><a href="index.html #time">Nossos Membros</a></p>
+                    <p><a href="index.html #time">Suas Funções</a></p>
+                </div>
+                <div class="informa">
+                    <h3>Contato</h3>
+                    <img src="src/img/facebook.png" alt="">
+                    <img src="src/img/instagram.png" alt="">
+                    <img src="src/img/linkedin.png" alt="">
+                    <img src="src/img/o-email.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="p">
+            <p>Desenvolvido por alunos SPtechers - &copy; Copyright</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<script>
+     function calcular() {
+        var metros = Number(in_tamanho.value) // quantos metros quadrados
+        var kg = Number(metros * 0.89) // quantos kilos faz um metro²
+        var perda = Number(kg * 0.20) // 20% de perda por conta da doença
+        var bruto = Number(metros * 8.22) // quanto cada metro² faz em dinheiro
+        var dinheiro = Number(bruto * 0.20) // perda em dinheiro referente aos 20% da doença 
+        var sensor = 25 * (metros / 20) // quanto sera gasto com sensor por metros
+        var tipoCafe = sel_cafe.value
+        
+        
+        if(tipoCafe == "Arabica") {
+            var bruto = metros * 18.67 
+            var total = bruto - sensor
+            formu.innerHTML = `<div class="resultado">
+    
+    <div class="card producao">
+        <h2>Produção</h2>
+        <h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)}</h4>
+    </div>
+
+    <div class="card perda">
+        <h2>Perda</h2>
+        <h4> Porém, você perde entorno de 20% por conta de doenças como a ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em receita isso se resulta a R$${dinheiro.toFixed(2)} </h4>
+    </div>
+
+    <div class="card lucro">
+        <h2>Economia</h2>
+        <h4>Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuízo seria totalmente reduzido, resultando em um lucro total de R$${total.toFixed(2)}</h4>
+    </div>
+
+</div>
+
+
+    <button class="bnt-resultado bnt"><a href="simulador.html">Nova Simulação</a></button>
+`
+
+        } else if(tipoCafe == "Robusta") {
+            var bruto = metros * 17.61
+            var total = bruto - sensor
+            formu.innerHTML= `<div class="resultado">
+    
+    <div class="card producao">
+        <h2>Produção</h2>
+        <h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)}</h4>
+    </div>
+
+    <div class="card perda">
+        <h2>Perda</h2>
+        <h4>Porém, você perde entorno de 20% por conta de doenças como a ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)}</h4>
+    </div>
+
+    <div class="card lucro">
+        <h2>Economia</h2>
+        <h4>Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um lucro total de R$${total.toFixed(2)}</h4>
+    </div>
+
+</div>
+
+<button class="bnt-resultado bnt"><a href="simulador.html">Nova Simulação</a></button>`
+
+        } else if(tipoCafe == "Liberica") {
+            var bruto = metros * 16.41
+            var total = bruto - sensor
+            formu.innerHTML= `<div class="resultado">
+    
+    <div class="card producao">
+        <h2>Produção</h2>
+        <h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)}</h4>
+    </div>
+
+    <div class="card perda">
+        <h2>Perda</h2>
+        <h4> Porém, você perde entorno de 20% por conta de doenças como a ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)}</h4>
+    </div>
+
+    <div class="card lucro">
+        <h2>Economia</h2>
+        <h4>Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um lucro total de R$${total.toFixed(2)}</h4>
+    </div>
+
+</div>
+
+<button class="bnt-resultado bnt"><a href="simulador.html">Nova Simulação</a></button>`
+        //     bruto = metros * 18.67 
+        //     var total = bruto - sensor // total economizados pelo total de metros
+        //     formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
+        // } else if(tipoCafe == "Robusta") {
+        //     bruto = metros * 17.61
+        //     var total = bruto - sensor
+        //     formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
+        // } else if(tipoCafe == "Liberica") {
+        //     bruto = metros * 16.41
+        //     var total = bruto - sensor
+        //     formu.innerHTML= `<h4>Olá, você produz cerca de ${kg.toFixed(2)}Kg de café, totalizando entorno de R$${bruto.toFixed(2)} <br><br> Porém você perde entorno de 20% por conta de doenças como ferrugem de café, isso equivale a ${perda.toFixed(2)}Kg e em dinheiro isso se resulta a R$${dinheiro.toFixed(2)} <br><br> Com um pequeno custo de R$${sensor.toFixed(2)} para utilizar nosso sensor, seu prejuizo seria totalmente reduzido, resultando em um luco total de R$${total.toFixed(2)}</h4><br><br>`
+        }
+    }
+</script>

@@ -1,0 +1,44 @@
+.navbar{
+    background-color: black;
+    position: relative;
+}
+
+main{
+    padding: 0;
+    margin: 0;
+}
+.imagens{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img1{
+    transform: rotateY(180deg);
+}
+
+.logoProduct{
+    position: absolute;
+    margin-left: 29%;
+    height: 25vh;
+}
+.logoProduct img{
+    height: 80vh;
+    margin-top: -10%;
+}
+
+.img2{
+    transform: rotateY(180deg);
+}
+
+.slogan{
+    position: absolute;
+    font-size: 25px;
+    color: #99775C;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: -8%;
+}
+
+footer{
+    margin-top: -5px;
+}

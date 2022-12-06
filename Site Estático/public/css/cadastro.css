@@ -1,0 +1,97 @@
+.navbar{
+    background-color: black;
+    position: relative;
+}
+
+.formulario{
+    height: 520px;
+    width: 70%;
+    padding-bottom: 25px;
+}
+
+.formulario h1{
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.form{
+    margin: 5%;
+}
+
+.form button{
+    height: 8%;
+    width: 15%;
+    padding: 10px;
+    border: 2px solid black;
+    color: white;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    position: absolute;
+    margin-left: 35%;
+}
+
+.campo {
+    font-size: 20px;
+    justify-content: flex-start;
+    margin: 3%;
+}
+
+.campo input{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    border-bottom: 2px solid black;
+    height: 5%;
+    width: 70%;
+    padding: 5px;
+}
+
+.lembre{
+    display: flex;
+    margin: 10px;
+    margin-left: 15%;
+}
+
+.lembre p{
+    margin-left: 10px;
+}
+
+.lembre input{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
+
+input{
+    color: white;
+    outline: none;
+}
+
+.informacoes{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-left: 10%;
+    color: white;
+    font-size: 18px;
+    width: 40%;
+}
+
+.informacoes h4{
+    margin-top: 5px;
+}
+
+.informacoes a{
+    color: white;
+}
+
+.imageCAD{
+    margin-left: 70%;
+    margin-top: -55%;
+    height: 50vh;
+}
+
+.imageCAD img{
+    height: 70vh;
+}

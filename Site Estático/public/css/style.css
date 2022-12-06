@@ -1,0 +1,225 @@
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../src/img/banner3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.slogan{
+    margin-left: 55%;
+    height: 40%;
+    margin-bottom: 150px;
+    color: white;
+    padding: 10% 0;
+    font-family: 'play';
+}
+.slogan h2{
+    font-size: 40px;
+    margin-top: 10%;
+}
+.slogan p{
+    margin-top: 10px;
+    font-size: 18px;
+}
+.slogan button{
+    height: 20%;
+    width: 30%;
+    padding: 10px;
+    border: 2px solid #CF7726;
+    color: #CF7726;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    margin-top: 5%;
+}
+.slogan button a{
+    color: #CF7726;
+}
+
+main{
+    padding: 0;
+    text-align: center;
+    border-top: 4px solid #CF7726;
+}
+.sobrenos{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    background-color: rgba(83, 81, 81, 0.192);
+    height: 100%;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    border-bottom: 4px solid #CF7726;
+}
+
+
+/*quem somos*/
+.quemSomos{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../src/img/QuemSomos.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    width: 32%;
+    justify-content: center;
+    text-align: center;
+}
+.quemSomos h3{
+    font-size: 50px;
+    color: white;
+    margin-top: 20%;
+    margin-left: 10%;
+    border-bottom: 2px solid #CF7726;
+    width: 80%;
+}
+.quemSomos button{
+    margin-top: 40%;
+    padding: 14px 30px;
+    width: 50%;
+    border-radius: 2px;
+    border-color: #CF7726;
+    color:#CF7726;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+}
+
+/*valores*/
+.valores{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../src/img/valores.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    width: 32%;
+    justify-content: center;
+    text-align: center;
+}
+.valores h3{
+    font-size: 50px;
+    color: white;
+    margin-top: 20%;
+    margin-left: 5%;
+    border-bottom: 2px solid #CF7726;
+    width: 90%;
+}
+.valores button{
+    margin-top: 40%;
+    padding: 14px 30px;
+    width: 50%;
+    border-radius: 2px;
+    border-color: #CF7726;
+    color:#CF7726;
+    background-color: Transparent;
+    background-repeat:no-repeat;   
+}
+
+/*produto*/
+.produto{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../src/img/product.png);
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    width: 32%;
+    justify-content: center;
+    text-align: center;
+}
+.produto h3{
+    font-size: 50px;
+    color: white;
+    margin-top: 20%;
+    margin-left: 5%;
+    border-bottom: 2px solid #CF7726;
+    width: 90%;
+}
+.produto button{
+    margin-top: 40%;
+    padding: 14px 30px;
+    width: 50%;
+    border-radius: 2px;
+    border-color: #CF7726;
+    color:#CF7726;
+    background-color: Transparent;
+    background-repeat:no-repeat;   
+}
+
+/*equipe*/
+.time{
+    text-align: center;
+    margin-bottom: 5%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.time h1{
+    font-size: 50px;
+    color: #CF7726;
+    margin-top: 5%;
+}
+.equipe{
+    width: 80%;
+    height: 80vh;
+    border-left: 4px solid #CF7726;
+    justify-content: center;
+    padding: 30px 0px;
+}
+.membros{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.membros h1{
+    font-size: 30px;
+}
+.part1{
+    display: flex;
+    justify-content: space-around;
+}
+.part2{
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-around;
+}
+
+.foto{
+    height: 10rem;
+    width: 10rem;
+    background-size: cover;
+    border-radius: 200px;
+    border: 3px solid #CF7726;
+
+}
+.foto:houver{
+    height: 15vh;
+    transition: 0.s;
+    justify-content: space-around;
+}
+
+.nauana{
+    background-image: url(../src/img/nauana.jpg);
+    background-position-y: -50px;
+    background-size: cover;
+}
+.isaias{
+    background-image: url(../src/img/isaias.jpeg);
+    background-size: cover;
+}
+.matheus{
+    background-image: url(../src/img/matheus.jpeg);
+    background-size: cover;
+    background-position-y: -50px;
+}
+.lucas{
+    background-image: url(../src/img/lucas.jpeg);
+    background-size: cover;
+    background-position-y: -50px;
+}
+.jefferson{
+    background-image: url(../src/img/jefferson.png);
+    background-size: cover;
+}
+.yago{
+    background-image: url(../src/img/yago.jpeg);
+    background-size: cover;
+}

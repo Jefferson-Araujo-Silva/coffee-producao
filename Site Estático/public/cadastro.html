@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="js/funcoes.js">
+    <link rel="icon" type="imagem/png" href="src/img/icon.png" />
+    <title>Health Tech</title>
+</head>
+<body>
+    
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="src/img/logo2.png" alt="" height="100px">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="index.html #about">SOBRE NÓS</a></li>
+                    <li><a href="index.html #time">EQUIPE</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+                <button class="bnt"><a href="login.html">LOGIN</a></button>
+            </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="formulario">
+                <h1>Cadastro</h1>
+                    <div class="form">
+                        <div class="campo">
+                            <h4>Nome</h4>
+                            <input type="text" id="in_nome" placeholder="Nome">
+                        </div>
+            
+                        <div class="campo">
+                            <h4>E-mail</h4>
+                            <input type="email" id="in_email" placeholder="Email@email.com">
+                        </div>
+            
+                        <div class="campo">
+                            <h4>Senha</h4>
+                            <input type="password" id="in_password" placeholder="***********">
+                        </div>
+            
+                        <div class="campo">
+                            <h4>Confirmação de senha</h4>
+                            <input type="password" id="in_confirmpassword" placeholder="***********">
+                        </div>
+                        <button class="bnt" onclick="cadastrar()">Cadastrar</button>
+                        
+                    </div>
+                    
+                    <div class="informacoes">
+                        <h4>Já possui cadastro?<a href="login.html" style="color: #CF7726;"> Login</a>
+                    </h4>
+                    </div>
+
+                    <div class="imageCAD">
+                        <img src="src/img/login.png" alt="">
+                    </div>
+                </div>
+            </div>
+        
+    </main>
+
+    <footer id="contact">
+        <div class="footer">
+            <div class="logo">
+               <img src="src/img/logo2.png" alt="">
+            </div>
+            <div class="container">
+                <div class="info">
+                    <div class="nos">
+                        <h3>Sobre nós</h3>
+                        <p><a href="quemSomos.html">Quem Somos</a></p>
+                        <p><a href="valores.html">Nossos Valores</a></p>
+                        <p><a href="produto.html">Projeto</a></p>
+                    </div>
+                    <div class="equi">
+                        <h3>Equipe</h3>
+                        <p><a href="index.html #time">Nossos Membros</a></p>
+                        <p><a href="index.html #time">Suas Funções</a></p>
+                    </div>
+                    <div class="informa">
+                        <h3>Contato</h3>
+                        <img src="src/img/facebook.png" alt="">
+                        <img src="src/img/instagram.png" alt="">
+                        <img src="src/img/linkedin.png" alt="">
+                        <img src="src/img/o-email.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="p">
+                <p>Desenvolvido por alunos SPtechers - &copy; Copyright</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+<script>
+    function cadastrar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = in_nome.value;
+        var emailVar = in_email.value;
+        var senhaVar = in_password.value;
+        var confirmacaoSenhaVar = in_confirmpassword.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            alert('Por favor, preencha todos os campos para prosseguir!')
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                alert ("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+</script>

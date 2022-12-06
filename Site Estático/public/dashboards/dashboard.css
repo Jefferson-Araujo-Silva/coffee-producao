@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+
+*{
+    font-family: Play;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.356);
+    margin: 0 auto;
+    padding: 15px;
+    
+}
+
+.janela {
+    display: flex;
+    margin-left: 4%;
+    width: 100vw;
+}
+
+.header-left a {
+    text-decoration: none;
+    color: white;
+  }
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 3px solid rgb(207, 119, 38);
+    background-color: #212124;
+}
+
+.header-left h1 {
+    color: #68543e;
+}
+
+.hello {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.userimg{
+
+    width: 92px;
+    height: 92px;
+    left: 103px;
+    top: 135px;
+        
+}
+  
+.hello h3 {
+    color: #e3b062;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+  
+.hello h3 span {
+    font-weight: 800;
+}
+
+.btn-nav {
+  width: 40%;
+  color: white;
+  background-color: #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+}
+
+.btn-nav-white {
+  text-align: center;
+  width: 50%;
+}
+
+.header-left .img{
+
+    margin-left: -100%;
+    margin-bottom: -25%;
+}
+
+.btn-nav-white h3 {
+  color: #CF7726;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-logout {
+    margin-top: 100px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center; 
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.janela {
+    display: flex;
+    width: 88vw;
+    flex-direction: column;
+}  
+  
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 22%;
+}
+
+.cards div {
+    padding: 10px;
+    height: 40%;
+    margin: 20px;
+    width: 150px;
+    transition: all 0.3s ease-out;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+   
+.card p {
+    color: #a3a5ae;
+    font-size: 16px;
+}
+
+.card1 {
+    height: 102px;
+    background: #3ec8e1;
+  }
+   
+.card2 {
+    height: 102px;
+    background: #d9e146;
+  }
+   
+.card3 {
+    height: 102px;
+    background: #7AF978;
+}
+
+.card4 {
+    height: 102px;
+    background: #e18e46;
+}
+
+.card5 {
+    height: 102px;
+    background: #E13E3E;
+}
+
+.cards-setor{
+    margin-left: 8%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 450px;
+    width: 98.5%;
+    align-items: center;
+    color: white;   
+}
+
+.cards-setor .container{
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    width: 80%;
+    
+}
+
+.card{
+    transition: .5s ease;
+}
+
+.cards1, .cards2, .cards3{
+    margin: 2%;
+    width: 40%;
+    height: 50%;
+    padding: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+    height: 180px;
+    justify-content: right;
+    font-size: 20px;
+}
+
+.cards-setor p {
+    margin: 0;
+    font-size: 50px;
+    font-weight: lighter;
+    text-align: left;
+    margin-left: -10%;
+}
+
+.cards4{
+    margin: 2%;
+    width: 40%;
+    height: 50%;
+    padding: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+    height: 180px;
+    justify-content: right;
+    font-size: 20px;
+}
+
+.cards-setor h1 {
+    font-size: 22px;
+    width: 100%;
+    border-bottom: solid #CF7726 3px;
+    text-align: left;
+    font-weight: lighter;
+    margin: 20px;
+}
+.cards-setor h5{
+    font-weight: lighter;
+    text-align: right;
+    margin-right: 15px;
+    margin-top: -20px;
+}
+
+.temperatura{
+  margin: 5px;
+  margin-left: 20px;
+  width: 75%;
+}
+
+

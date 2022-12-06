@@ -1,0 +1,302 @@
+/* Silver	#C0C0C0	(192,192,192) */
+
+
+body{
+    background-color: rgb(192, 192, 192) ;
+    /* background: #1e1916; */
+    color: white;
+    font-family: poppinsregular;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(192,192,192);
+}
+
+
+#title{
+    color: #4d311e;
+    flex-direction: column;
+    line-height: 10px;
+}
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+a{
+    color:white;
+}
+
+a:hover{
+    color: rgb(61, 61, 61);
+    transition: 0.3s all;
+}
+
+#login-btn{
+    border: 2px solid rgb(37 , 37, 37);
+    padding: 10px;
+   
+}
+
+#login-btn:hover{
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+    
+
+h1{
+    font-weight: 200;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: flex-end;
+}
+
+aside{
+    max-width: 650px;
+}
+
+h2{
+    font-size: 56px;
+    line-height: 45px;
+    font-family: poppinsmedium;
+}
+
+span{
+    color: rgb(61, 61, 61);
+}
+
+p{
+    line-height: 20px;
+    max-width: 500px;
+    font-family: poppinslight;
+}
+
+img{
+    margin-top: 40%;
+    margin-left: 60%;
+    width: 300px;
+}
+
+
+
+form [type="submit"]{
+    height: 50px;
+    width: 50%;
+    background-color: rgb(10, 10, 10);
+    color: white;
+    font-weight: bold;
+
+}
+
+form [type="submit"]:hover{
+    cursor: pointer;
+}
+
+input{
+    margin-top: 20px;
+    height: 20px;
+    padding: 20px;
+    border: 20px;
+    border: none;
+    font-size: 15px;
+}
+
+.quem-somos .container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+    margin-left: -13%;
+    margin-right: -13%;
+    background-color: #D3D3D3;
+    padding-bottom: 20%;
+}
+
+.quem-somos-txt{
+    color: #363636;
+    display: flex;
+    margin-top: 8%;
+    margin-bottom: -8%;
+    margin-right: 5%;
+    padding: 5%;
+    flex-direction: column;
+    background-color: #E8CB9A;
+}
+
+.quem-somos-txt h2{
+   color: #1C1C1C;
+   text-align: center;
+   padding: 15px;
+   border-bottom: 3px solid #cd7f32;
+   
+}
+
+
+.quem-somos-img img{
+    width: 120%;
+    margin-left: 8%;
+    margin-top: 0;
+    margin-right: -10%;
+    margin-bottom: -50%;
+}
+
+.quem-somos-bckgrnd1{
+    display: flex;
+    width: 20%;
+    margin-top: -7%;
+    margin-left: -9.5%;
+    justify-content: flex-start;
+    height:  650px;
+}
+
+.coffee-health-bckgrnd2{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -30%;
+    
+}
+
+.quem-somos-bckgrnd3{
+    display: flex;
+    width: 20%;
+    margin-top: -7%;
+    margin-right: -18%;
+    transform: scaleX(-1);
+    height: 650px;
+}
+.quem-somos-bckgrnd1 img:hover{
+    -webkit-transform: none;
+    transform: none;
+}
+
+.coffee-health-bckgrnd2 img:hover{
+    -webkit-transform: none;
+    transform: none;
+}
+
+.quem-somos-bckgrnd3 img:hover{
+    -webkit-transform: none;
+    transform: none;
+}
+
+.nossos-valores .container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.nossos-valores h2{
+    display: flex;
+    color: #1C1C1C;
+    padding: 15px;
+    border-bottom: 3px solid #cd7f32;
+}
+
+.nossos-valores-resi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -75%;
+    color: #363636;
+    margin-top: 0%;
+    margin-right: 5%;
+    background-color: #D3D3D3;
+}
+
+.nossos-valores-resi h3{
+    color: #1C1C1C;
+    padding: 15px;
+    border-bottom: 3px solid #30a8b3;
+}
+
+.nossos-valores-resi p{
+   text-align: center;
+}
+
+.nossos-valores-transparencia{
+    display: flex;
+    margin-top: -0%;
+    margin-left: 14%;
+}
+
+.nossos-valores-resi img:hover{
+    -webkit-transform: none;
+    transform: none;
+}
+
+
+.nossos-valores-respeito{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #363636;
+    margin-left: 5%;
+    margin-top: -39.3%;
+    background-color: #D3D3D3;
+}
+
+.nossos-valores-respeito h3{
+    color: #1C1C1C;
+    padding: 15px;
+    border-bottom: 3px solid #30a8b3;
+}
+
+.nossos-valores-respeito p{
+   text-align: center;
+}
+
+.nossos-valores-respeito-img{
+   margin-top: -1%;
+   margin-left: 5%;
+}
+
+.nossos-valores-respeito img:hover{
+    -webkit-transform: none;
+    transform: none;
+}
+
+
+footer{
+   
+    background-color: black;
+    color: white;
+    height: 100px;
+    margin: 0px;
+    margin-left: -160px;
+    margin-right: -160px;
+    margin-bottom: -10%;
+}
+
+.footer .container {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer .container p{
+    text-align: left;
+    line-height: 100%;
+}
+
+.footer .container h4{
+    padding: 0%;
+    line-height: 100%;
+}
+
+.copy{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: black;
+}

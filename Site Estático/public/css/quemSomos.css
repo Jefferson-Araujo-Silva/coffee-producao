@@ -1,0 +1,40 @@
+.navbar{
+    background-color: black;
+    position: relative;
+}
+
+main{
+    padding: 0;
+}
+.quem-somos{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-left: -10%;
+}
+.somos{
+    height: 60vh;
+    width: 30%;
+    margin-top: 80px;
+    margin-left: -20%;
+}
+.somos h3{
+    margin-top: 5%;
+    font-size: 50px;
+    border-bottom: 3px solid #CF7726;
+    padding: 10px;
+    width: 100%;
+}
+.somos p{
+    text-align: left;
+    font-size: 20px;
+    margin-top: 5%;
+    padding: 10px;
+}
+
+.Logo img{
+    height: 100vh;
+    width: 100%;
+    margin-top: -10%;
+    margin-left: -20%;
+}
